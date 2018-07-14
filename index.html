@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Hind|Tangerine" rel="stylesheet">    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
+    <title>RPG Game</title>
+
+</head>
+
+<body>
+    
+    <div class="container">
+    
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <img class="center" src="assets/images/title.png">
+                <p id="type-writer"></p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="gameover">
+                    
+                    <h1>Game Over</h1>
+                
+                </div>
+
+            </div>
+    
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="gamewin">
+                    
+                    <h1>You win!</h1>
+                
+                </div>
+
+            </div>
+    
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <!-- Trigger/Open The Modal -->
+                <button id="myBtn">Game Start</button>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <div id="intro-text"></div>
+                        <span class="characterSelect">Character Selection</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="row">
+
+            <div class="col-lg-12">   
+
+                <div class="characterSelectModal">
+
+                    <div class="modal-content1">
+
+                        <div class="row">
+
+                            <div class="col-lg-12">
+
+                                <h1>Choose your hero</h1>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+
+                                <div class="text1"> Adventurer</div>
+                                <img id="adventurer-img" src="assets/images/idle.gif" width="100%" height="70%">
+                            
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                
+                                <div class="text2"> Knight </div>
+                                <img id="knight-img" src="assets/images/knight-idle.gif" width="100%" height="100%">
+                            
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div> 
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="enterUsernameModal">
+
+                    <div class="modal-content2">
+                        
+                        <div class='wrapper'>
+                            <form id='nameForm'>
+                            <div class='form-uname'>
+                                <label id='nameLabel' for='nameField'>Create a name for your hero:</label>
+                                <input id='nameField' type='text' maxlength='25'></input>
+                            </div>
+                            <div class='form-sub'>
+                                <button id='subButton' type='button'>Submit</button>
+                            </div>
+                            </form>
+                            
+                            <div>
+                                <p id='result'></p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div id="dungeon">
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+
+                            <div class="health-bar" data-total="100" data-value="100">
+                                <div class="bar">
+                                    <div class="hit"></div>
+                                </div>
+                            </div>
+
+                            <p class="heroCurrentHP"></p>
+
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <div class="health-bar stay-right" data-total="100" data-value="100">
+                                <div class="bar">
+                                    <div class="hit"></div>
+                                </div>
+                            </div>
+
+                            <br />
+                            <p class="monsterCurrentHP"></p>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            
+                            <div class="selectedCharacterImg">
+                                
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-lg-6">
+                            <img class ="monster-img stay-right" src="assets/images/slime.gif" width="30%">
+                            <div class="damageToSlim"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row battle-history-text-box">
+
+                    <div class="col-lg-12">
+
+                    </div>
+
+                </div>
+
+                <div class="row battle-moves">
+
+                    <div class="col-lg-12">
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+
+                                <button type="button" class="btn-block attack-1">Rising Slash</button>
+
+                            </div>
+
+                            <div class="col-lg-6">
+
+                                <button type="button" class="btn-block attack-2">Twin Slice</button>
+        
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+
+                                <button type="button" class="btn-block attack-3">Trident Strike</button>
+
+                            </div>
+
+                            <div class="col-lg-6">
+
+                                <button type="button" class="btn-block attack-4">Swift Disembowelment</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>

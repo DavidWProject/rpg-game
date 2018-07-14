@@ -1,0 +1,301 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 50px;
+}
+/* Background gif */
+body {
+    margin: 0;
+    background-image: url("../images/giphy1.gif");
+    background-size: 1440px 800px;
+    background-repeat: no-repeat;
+    display: compact;
+}
+
+#myBtn {
+    padding: 10px;
+    background: grey;
+    font-family: 'Tangerine', cursive;
+    font-size: 24px;
+    border-radius: 10px;
+    margin: 5% 30% 5% 45%;
+    font-weight: 900;
+}
+
+#myBtn:hover {
+    background: lightgrey;
+    color: grey;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: lightgray;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    margin-top: 50px;
+}
+
+/* 2nd Modal Content (character selection) */
+.modal-content1 {
+    display: none; 
+    margin: auto; 
+    z-index: 1;
+    background-color: #000;
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 70%; 
+    overflow: auto; 
+    margin-bottom: 100px; 
+}
+
+
+.modal-content2 {
+    display: none;
+    margin: auto;
+    background-color: #000;
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 80%; 
+    overflow: auto; 
+    color: white;
+}
+/* Battle Area Modal */
+#dungeon {
+    display: none;
+    margin: auto;
+    background-color: #000;
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 80%; 
+    overflow: auto; 
+    color: white;
+    background-image:url('../images/cave-background.png');
+    background-position: bottom;
+    background-size: 400px 200px;
+}
+
+/* The character select button */
+.characterSelect {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.characterSelect:hover,
+.characterSelect:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.intro-text {
+    text-align: center;
+    float: top;
+}
+
+#adventurer-img {
+    margin-top: 30px; 
+    image-rendering: pixelated;
+}
+
+#adventurer-img:hover {
+    padding: 10px; 
+}
+
+#knight-img {
+    margin-top: -20px; 
+    margin-left: 10px; 
+    margin-top: -90px; 
+    image-rendering: pixelated;
+}
+
+#knight-img:hover {
+    padding: 10px; 
+}
+
+.text1 {
+    color: white; 
+    text-align: center; 
+    overflow: auto; 
+    margin-top: 50px; 
+}
+
+.text2 {
+    color: white;
+    position: relative; 
+    top: 0; 
+    text-align: center; 
+    margin-top: 50px; 
+}
+
+h1 {
+    color: white; 
+    text-align: center; 
+}
+
+.health-bar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    background: #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.stay-right {
+    float: right; 
+}
+
+.bar {
+    background: #c54;
+    width: 100%;
+    height: 10px;
+    position: relative;
+}
+
+.hit {
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+}
+
+.idle-battle-img {
+    width: 40%;
+}
+
+.battle-history-text-box {
+    height: 50px; 
+    background-color: black;
+    display: none; 
+    margin-left: 100px; 
+    margin-right: 100px; 
+    padding: 20px 120px 30px 120px; 
+    overflow: scroll; 
+    text-align: center; 
+    color: white; 
+}
+
+.battle-moves {
+    display: none; 
+    margin-left: 93px; 
+    margin-right: 93px; 
+    padding: 20px; 
+}
+
+.btn-block {
+    margin-top: 20px; 
+}
+
+.monsterCurrentHP {
+    text-align: right; 
+    margin-top: -3px; 
+}
+
+.monster-img {
+    margin-top: 25px; 
+}
+
+div.row div{
+    -webkit-transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
+    -o-transition: width 0.3s ease;
+    transition: width 0.3s ease;
+    overflow:hidden;
+}
+
+.gameover {
+    text-align: center; 
+    background-color:grey;
+    -webkit-animation-name: gameover; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 20s; /* Safari 4.0 - 8.0 */
+    animation-name: gameover;
+    animation-duration: 20s;
+    display: none; 
+    margin-left: 100px; 
+    margin-right: 100px; 
+}
+
+.gamewin {
+    text-align: center; 
+    background-color:grey;
+    -webkit-animation-name: gamewin; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 20s; /* Safari 4.0 - 8.0 */
+    animation-name: gamewin;
+    animation-duration: 20s;
+    display: none; 
+    margin-left: 100px; 
+    margin-right: 100px; 
+}
+
+.damageToSlim {
+    position: absolute; 
+    right: 20%;
+    top: 10%;
+}
+
+.damageToHero {
+    position: absolute; 
+    left: 20%; 
+    top: 10%;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes gameover {
+    0%   {background-color: rgba(255, 0, 0, 0.685);}
+    25%  {background-color: rgba(0, 255, 85, 0.445);}
+    50%  {background-color: blue;}
+    100% {background-color: rgba(174, 30, 179, 0.623);}
+}
+
+/* Standard syntax */
+@keyframes gameover {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: rgba(174, 30, 179, 0.623);}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes gamewin {
+    0%   {background-color: rgba(255, 102, 0, 0.973);}
+    25%  {background-color: rgb(255, 208, 0);}
+    50%  {background-color: rgb(166, 255, 0);}
+    100% {background-color: rgb(30, 179, 42);}
+}
+
+/* Standard syntax */
+@keyframes gamewin {
+    0%   {background-color: rgba(255, 102, 0, 0.973);}
+    25%  {background-color: rgb(255, 208, 0);}
+    50%  {background-color: rgb(166, 255, 0);}
+    100% {background-color: rgb(30, 179, 42);}
+}
+
