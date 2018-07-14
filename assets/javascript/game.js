@@ -199,9 +199,9 @@ $(document).ready(function () {
 
     startGame();
     
-    var fewSeconds = 2;
+    var fewSeconds = 1;
 
-    $('.btn-block').click(function(){
+    $('.attack1').click(function(){
         // Ajax request
         var btn = $('.btn-block');
         btn.prop('disabled', true);
@@ -210,7 +210,32 @@ $(document).ready(function () {
         }, fewSeconds*1000);
     });
 
+    $('.attack2').click(function(){
+        // Ajax request
+        var btn = $('.btn-block');
+        btn.prop('disabled', true);
+        setTimeout(function(){
+            btn.prop('disabled', false);
+        }, fewSeconds*1800);
+    });
 
+    $('.attack3').click(function(){
+        // Ajax request
+        var btn = $('.btn-block');
+        btn.prop('disabled', true);
+        setTimeout(function(){
+            btn.prop('disabled', false);
+        }, fewSeconds*2600);
+    });
+
+    $('.attack4').click(function(){
+        // Ajax request
+        var btn = $('.btn-block');
+        btn.prop('disabled', true);
+        setTimeout(function(){
+            btn.prop('disabled', false);
+        }, fewSeconds*3000);
+    });
 });
 
 
