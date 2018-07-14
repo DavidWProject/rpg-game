@@ -201,35 +201,7 @@ $(document).ready(function () {
     
     var fewSeconds = 1;
 
-    $('.attack1').click(function(){
-        // Ajax request
-        var btn = $('.btn-block');
-        btn.prop('disabled', true);
-        setTimeout(function(){
-            btn.prop('disabled', false);
-        }, fewSeconds*1000);
-    });
-
-    $('.attack2').click(function(){
-        // Ajax request
-        var btn = $('.btn-block');
-        btn.prop('disabled', true);
-        setTimeout(function(){
-            btn.prop('disabled', false);
-        }, fewSeconds*1800);
-    });
-
-    $('.attack3').click(function(){
-        // Ajax request
-        var btn = $('.btn-block');
-        btn.prop('disabled', true);
-        setTimeout(function(){
-            btn.prop('disabled', false);
-        }, fewSeconds*2600);
-    });
-
-    $('.attack4').click(function(){
-        // Ajax request
+    $('btn-block').click(function(){  
         var btn = $('.btn-block');
         btn.prop('disabled', true);
         setTimeout(function(){
