@@ -10,8 +10,7 @@ body {
     margin: 0;
     background-image: url("../images/giphy1.gif");
     background-size: 100%;
-    background-repeat: no-repeat;
-    display: compact;
+    background-repeat: repeat-y;
 }
 
 #myBtn {
@@ -195,12 +194,13 @@ h1 {
     height: 50px; 
     background-color: black;
     display: none; 
-    margin-left: 100px; 
-    margin-right: 100px; 
-    padding: 20px 120px 30px 120px; 
-    overflow: scroll; 
+    margin-left: 10%; 
+    margin-right: 10%; 
+    padding: 20px 20px 40px 20px; 
+    overflow: auto; 
     text-align: center; 
     color: white; 
+    white-space: none; 
 }
 
 .battle-moves {
@@ -258,13 +258,15 @@ div.row div{
 .damageToSlim {
     position: absolute; 
     right: 20%;
-    top: 10%;
+    top: 5%;
+    color: red; 
 }
 
 .damageToHero {
     position: absolute; 
     left: 20%; 
-    top: 10%;
+    top: 5%;
+    color: red; 
 }
 
 /* Safari 4.0 - 8.0 */

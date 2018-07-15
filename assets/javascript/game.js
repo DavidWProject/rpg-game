@@ -37,6 +37,7 @@ $(document).ready(function () {
     $('.monsterCurrentHP').text("HP: " + enemyHp);
 
     function startGame() {
+
         // When the user clicks the button, open the modal 
         btn.onclick = function () {
             $('.gameover').hide();
@@ -45,7 +46,7 @@ $(document).ready(function () {
             $('.characterSelect').hide();
             setTimeout(function () {
                 $('.characterSelect').show();
-            }, 1000); //load character selection option after 5 seconds
+            }, 5000); //load character selection option after 5 seconds
         }
 
         // When the user clicks on <span> (x), close the modal
@@ -84,10 +85,11 @@ $(document).ready(function () {
         });
 
         $('#knight-img').on('click', function startCharacterSelection() {
-            heroKnight = true;
-            charSelectModal.fadeOut("fast");
-            $('.modal-content2').fadeIn("slow");
-            $('.selectedCharacterImg').html("<img src='assets/images/knight-idle.gif' class='moving-img'>");
+            alert("Coming soon in the next patch. Thanks for waiting :)"); 
+            // heroKnight = true;
+            // charSelectModal.fadeOut("fast");
+            // $('.modal-content2').fadeIn("slow");
+            // $('.selectedCharacterImg').html("<img src='assets/images/knight-idle.gif' class='moving-img'>");
         });
 
         $('#subButton').on('click', function startGame() {
@@ -108,10 +110,10 @@ $(document).ready(function () {
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text(enemyDamage);
-            $('.damageToHero').fadeOut("slow");
-            $('.damageToSlim').text(attack1);
-            $('.damageToSlim').fadeOut("slow");
+            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').fadeOut(2000);
+            $('.damageToSlim').text("-"+attack1);
+            $('.damageToSlim').fadeOut(2000);
             checkGame();
         });
 
@@ -126,10 +128,10 @@ $(document).ready(function () {
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text(enemyDamage);
-            $('.damageToHero').fadeOut("slow");
-            $('.damageToSlim').text(attack2);
-            $('.damageToSlim').fadeOut("slow");
+            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').fadeOut(2000);
+            $('.damageToSlim').text("-"+attack2);
+            $('.damageToSlim').fadeOut(2000);
             checkGame();
         });
 
@@ -144,10 +146,10 @@ $(document).ready(function () {
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text(enemyDamage);
-            $('.damageToHero').fadeOut("slow");
-            $('.damageToSlim').text(attack3);
-            $('.damageToSlim').fadeOut("slow");
+            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').fadeOut(2000);
+            $('.damageToSlim').text("-"+attack3);
+            $('.damageToSlim').fadeOut(2000);
             checkGame();
         });
 
@@ -162,10 +164,10 @@ $(document).ready(function () {
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text(enemyDamage);
-            $('.damageToHero').fadeOut("slow");
-            $('.damageToSlim').text(attack4);
-            $('.damageToSlim').fadeOut("slow");
+            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').fadeOut(2000);
+            $('.damageToSlim').text("-"+attack4);
+            $('.damageToSlim').fadeOut(2000);
             checkGame();
         });
 
