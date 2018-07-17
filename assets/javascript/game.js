@@ -10,8 +10,8 @@ $('#myBtn').click(function typeWriter() {
     }
 });
 
-var backgroundMusic = document.createElement("audio"); 
-backgroundMusic.setAttribute("src", "assets/music/background.mp3"); 
+var backgroundMusic = document.createElement("audio");
+backgroundMusic.setAttribute("src", "assets/music/background.mp3");
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -27,26 +27,36 @@ var charSelectModal = $('.modal-content1')
 
 $(document).ready(function () {
 
-    var musicPlaying = true; 
+    var musicPlaying = true;
     var currentHp = 150;
-    var enemyHp = Math.floor((Math.random() * 102) + 19);
+    var enemyHp = enemyTotalHPNumber = Math.floor((Math.random() * 102) + 19);
     var enemyDamage = Math.floor((Math.random() * 13) + 1);
     var attack1 = Math.floor((Math.random() * 13) + 1);
     var attack2 = Math.floor((Math.random() * 13) + 1);
     var attack3 = Math.floor((Math.random() * 13) + 1);
     var attack4 = Math.floor((Math.random() * 13) + 1);
+    var finalHP = currentHp - enemyDamage;
+    var hpBar = $('.bar'); 
+    var enemyHpBar = $('.bar1'); 
+    var monsterTakenDamageFromAttack1 = enemyHp - attack1;
+    var monsterTakenDamageFromAttack2 = enemyHp - attack2;
+    var monsterTakenDamageFromAttack3 = enemyHp - attack3;
+    var monsterTakenDamageFromAttack4 = enemyHp - attack4;
+
 
     $('.heroCurrentHP').text("HP: " + currentHp);
     $('.monsterCurrentHP').text("HP: " + enemyHp);
-    
+
     //Background music from https://soundcloud.com/kidafshin/sets/rpg-adventure
-    $('#myBtn').on('click', function() {
-        backgroundMusic.play(); 
+    $('#myBtn').on('click', function () {
+        backgroundMusic.play();
     });
 
 
-    if (musicPlaying = true)
+
     function startGame() {
+
+        
 
         // When the user clicks the button, open the modal 
         btn.onclick = function () {
@@ -56,7 +66,7 @@ $(document).ready(function () {
             $('.characterSelect').hide();
             setTimeout(function () {
                 $('.characterSelect').show();
-            }, 5000); //load character selection option after 5 seconds
+            }, 1000); //load character selection option after 5 seconds
         }
 
         // When the user clicks on <span> (x), close the modal
@@ -95,7 +105,8 @@ $(document).ready(function () {
         });
 
         $('#knight-img').on('click', function startCharacterSelection() {
-            alert("Coming soon in the next patch. Thanks for waiting :)"); 
+            alert("Coming soon in the next patch. Thanks for waiting :)");
+            // Coming Soon
             // heroKnight = true;
             // charSelectModal.fadeOut("fast");
             // $('.modal-content2').fadeIn("slow");
@@ -114,16 +125,21 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('.selectedCharacterImg').html("<img src='assets/images/idle.gif' class='idle-battle-img'> <div class='damageToHero'></div> ");
             }, 1000);
-            enemyHp -= attack1;
+            enemyHp -= attack1; 
             currentHp -= enemyDamage;
             $('.heroCurrentHP').text("HP: " + currentHp);
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').text("-" + enemyDamage);
             $('.damageToHero').fadeOut(3000);
-            $('.damageToSlim').text("-"+attack1);
+            $('.damageToSlim').text("-" + attack1);
             $('.damageToSlim').fadeOut(3000);
+            finalHP = Math.floor((currentHp / 150) * 100);
+            enemyBar = Math.floor(((enemyHp) / (enemyTotalHPNumber)) * 100); 
+            hpBar.width(finalHP + '%'); 
+            enemyHpBar.width(enemyBar + '%'); 
+            console.log(enemyBar); 
             checkGame();
         });
 
@@ -132,16 +148,21 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('.selectedCharacterImg').html("<img src='assets/images/idle.gif' class='idle-battle-img'> <div class='damageToHero'></div> ");
             }, 1800);
-            enemyHp -= attack2;
+            enemyHp -= attack2; 
             currentHp -= enemyDamage;
             $('.heroCurrentHP').text("HP: " + currentHp);
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').text("-" + enemyDamage);
             $('.damageToHero').fadeOut(3000);
-            $('.damageToSlim').text("-"+attack2);
+            $('.damageToSlim').text("-" + attack2);
             $('.damageToSlim').fadeOut(3000);
+            finalHP = Math.floor((currentHp / 150) * 100);
+            enemyBar = Math.floor(((enemyHp) / (enemyTotalHPNumber)) * 100); 
+            hpBar.width(finalHP + '%'); 
+            enemyHpBar.width(enemyBar + '%'); 
+            console.log(enemyBar); 
             checkGame();
         });
 
@@ -150,16 +171,21 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('.selectedCharacterImg').html("<img src='assets/images/idle.gif' class='idle-battle-img'> <div class='damageToHero'></div> ");
             }, 2600);
-            enemyHp -= attack3;
+            enemyHp -= attack3; 
             currentHp -= enemyDamage;
             $('.heroCurrentHP').text("HP: " + currentHp);
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').text("-" + enemyDamage);
             $('.damageToHero').fadeOut(3000);
-            $('.damageToSlim').text("-"+attack3);
+            $('.damageToSlim').text("-" + attack3);
             $('.damageToSlim').fadeOut(3000);
+            finalHP = Math.floor((currentHp / 150) * 100);
+            enemyBar = Math.floor(((enemyHp) / (enemyTotalHPNumber)) * 100); 
+            hpBar.width(finalHP + '%'); 
+            enemyHpBar.width(enemyBar + '%'); 
+            console.log(enemyBar); 
             checkGame();
         });
 
@@ -168,16 +194,21 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('.selectedCharacterImg').html("<img src='assets/images/idle.gif' class='idle-battle-img'> <div class='damageToHero'></div> ");
             }, 3000);
-            enemyHp -= attack4;
+            enemyHp -= attack4; 
             currentHp -= enemyDamage;
             $('.heroCurrentHP').text("HP: " + currentHp);
             $('.monsterCurrentHP').text("HP: " + enemyHp);
             $('.damageToHero').show();
             $('.damageToSlim').show();
-            $('.damageToHero').text("-"+enemyDamage);
+            $('.damageToHero').text("-" + enemyDamage);
             $('.damageToHero').fadeOut(3000);
-            $('.damageToSlim').text("-"+attack4);
+            $('.damageToSlim').text("-" + attack4);
             $('.damageToSlim').fadeOut(3000);
+            finalHP = Math.floor((currentHp / 150) * 100);
+            enemyBar = Math.floor(((enemyHp) / (enemyTotalHPNumber)) * 100); 
+            hpBar.width(finalHP + '%'); 
+            enemyHpBar.width(enemyBar + '%'); 
+            console.log(enemyBar); 
             checkGame();
         });
 
