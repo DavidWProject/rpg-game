@@ -10,6 +10,8 @@ $('#myBtn').click(function typeWriter() {
     }
 });
 
+var backgroundMusic = document.createElement("audio"); 
+backgroundMusic.setAttribute("src", "assets/music/background.mp3"); 
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -25,6 +27,7 @@ var charSelectModal = $('.modal-content1')
 
 $(document).ready(function () {
 
+    var musicPlaying = true; 
     var currentHp = 150;
     var enemyHp = Math.floor((Math.random() * 102) + 19);
     var enemyDamage = Math.floor((Math.random() * 13) + 1);
@@ -35,7 +38,14 @@ $(document).ready(function () {
 
     $('.heroCurrentHP').text("HP: " + currentHp);
     $('.monsterCurrentHP').text("HP: " + enemyHp);
+    
+    //Background music from https://soundcloud.com/kidafshin/sets/rpg-adventure
+    $('#myBtn').on('click', function() {
+        backgroundMusic.play(); 
+    });
 
+
+    if (musicPlaying = true)
     function startGame() {
 
         // When the user clicks the button, open the modal 
@@ -111,9 +121,9 @@ $(document).ready(function () {
             $('.damageToHero').show();
             $('.damageToSlim').show();
             $('.damageToHero').text("-"+enemyDamage);
-            $('.damageToHero').fadeOut(2000);
+            $('.damageToHero').fadeOut(3000);
             $('.damageToSlim').text("-"+attack1);
-            $('.damageToSlim').fadeOut(2000);
+            $('.damageToSlim').fadeOut(3000);
             checkGame();
         });
 
@@ -129,9 +139,9 @@ $(document).ready(function () {
             $('.damageToHero').show();
             $('.damageToSlim').show();
             $('.damageToHero').text("-"+enemyDamage);
-            $('.damageToHero').fadeOut(2000);
+            $('.damageToHero').fadeOut(3000);
             $('.damageToSlim').text("-"+attack2);
-            $('.damageToSlim').fadeOut(2000);
+            $('.damageToSlim').fadeOut(3000);
             checkGame();
         });
 
@@ -147,9 +157,9 @@ $(document).ready(function () {
             $('.damageToHero').show();
             $('.damageToSlim').show();
             $('.damageToHero').text("-"+enemyDamage);
-            $('.damageToHero').fadeOut(2000);
+            $('.damageToHero').fadeOut(3000);
             $('.damageToSlim').text("-"+attack3);
-            $('.damageToSlim').fadeOut(2000);
+            $('.damageToSlim').fadeOut(3000);
             checkGame();
         });
 
@@ -165,9 +175,9 @@ $(document).ready(function () {
             $('.damageToHero').show();
             $('.damageToSlim').show();
             $('.damageToHero').text("-"+enemyDamage);
-            $('.damageToHero').fadeOut(2000);
+            $('.damageToHero').fadeOut(3000);
             $('.damageToSlim').text("-"+attack4);
-            $('.damageToSlim').fadeOut(2000);
+            $('.damageToSlim').fadeOut(3000);
             checkGame();
         });
 
