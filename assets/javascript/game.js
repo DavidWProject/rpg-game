@@ -52,7 +52,7 @@ $(document).ready(function () {
         backgroundMusic.play();
     });
 
-
+    event.preventDefault();
 
     function startGame() {
 
@@ -66,7 +66,7 @@ $(document).ready(function () {
             $('.characterSelect').hide();
             setTimeout(function () {
                 $('.characterSelect').show();
-            }, 1000); //load character selection option after 5 seconds
+            }, 5000); //load character selection option after 5 seconds
         }
 
         // When the user clicks on <span> (x), close the modal
