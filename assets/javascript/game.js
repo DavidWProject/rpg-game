@@ -52,7 +52,7 @@ $(document).ready(function () {
         backgroundMusic.play();
     });
 
-    event.preventDefault();
+    
 
     function startGame() {
 
